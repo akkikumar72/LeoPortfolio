@@ -18,8 +18,8 @@ collections:
   - name: 'projects'
     label: 'Projects'
     folder: 'content/projects'
-    path: '{{slug}}/index',
-    media_folder: '',
+    path: '{{slug}}/index'
+    media_folder: ''
     public_folder: ''
     create: true
     slug: '{{year}} - {{month}} - {{day}} - {{slug}}'
