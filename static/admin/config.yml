@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: akkikumar72/LeoPortfolio
+#  branch: master
+
+media_folder: 'static/images'
+public_folder: 'images'
+publish_mode: editorial_workflow
+
+collections:
+  - name: 'projects'
+    label: 'Projects'
+    folder: 'content/projects'
+    create: true
+    slug: '{{year}} - {{month}} - {{day}} - {{slug}}'
+    fields:
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'projects' }
+      - {label: 'Title', name: 'title', widget: 'string' }
+      - {label: 'Short title', name: 'short Title', widget: 'string' }
+      - {label: 'Color', name: 'color', widget: 'color', enableAlpha: true, allowInput: true }
+      - {label: 'Category', name: 'category', widget: 'select', options: ["trend", "still", "simple"], default: 'still' }
+      - {label: 'Cover Image', name: 'cover image', widget: 'image' }
+      - {label: 'Date', name: 'date', widget: 'datetime', default: '', format: 'YYYY-MM-DD'  }
+      - { label: 'Blog post content', name: 'body', widget: 'markdown' }
