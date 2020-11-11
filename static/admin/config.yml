@@ -1,6 +1,13 @@
 backend:
-  name: github
-  repo: akkikumar72/LeoPortfolio
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
 #  branch: master
 
 media_folder: 'static/images'
@@ -11,8 +18,10 @@ collections:
   - name: 'projects'
     label: 'Projects'
     folder: 'content/projects'
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
     create: true
-    slug: '{{year}} - {{month}} - {{day}} - {{slug}}'
     fields:
       - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'projects' }
       - {label: 'Title', name: 'title', widget: 'string' }
