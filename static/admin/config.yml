@@ -15,6 +15,35 @@ publish_mode: editorial_workflow
 local_backend: true
 
 collections:
+  - name: 'Pages'
+    label: 'Pages'
+    extension: mdx
+    format: frontmatter
+    media_folder: ''
+    public_folder: ''
+    create: true
+    files:
+      - label: 'About Page'
+        name: 'About'
+        file: 'content/pages/about/index.mdx'
+        fields:
+          - {label: 'title', name: 'title', widget: 'string'}
+          - {label: 'slug', name: 'slug', required: true, pattern: [ '^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters' ], widget: 'string' }
+          - {label: 'Cover Image', name: 'cover', widget: 'image' }
+          - { label: 'Blog post content', name: 'body', widget: 'markdown' }
+
+      - label: 'Instagram Page'
+        name: 'instagram'
+        file: 'content/pages/instagram/index.mdx'
+        fields:
+          - { label: 'title', name: 'title', widget: 'string' }
+          - { label: 'slug', name: 'slug', required: true, pattern: [ '^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters' ], widget: 'string' }
+          - {label: 'Color', name: 'color', widget: 'color', enableAlpha: true, allowInput: true }
+          - { label: 'Custom', name: 'custom', widget: 'boolean' }
+          - { label: 'Cover Image', name: 'cover', widget: 'image' }
+          - { label: 'Blog post content', name: 'body', widget: 'markdown' }
+
+
   - name: 'projects'
     label: 'Projects'
     folder: 'content/projects'
@@ -25,7 +54,6 @@ collections:
     public_folder: ''
     create: true
     fields:
-      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'projects' }
       - {label: 'title', name: 'title', widget: 'string' }
       - {label: 'shortTitle', name: 'shortTitle', widget: 'string' }
       - {label: 'slug', name: 'slug', required: true, pattern: [ '^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters' ]  }
@@ -34,3 +62,5 @@ collections:
       - {label: 'Cover Image', name: 'cover', widget: 'image' }
       - {label: 'date', name: 'date', widget: 'datetime', default: '', format: 'DD-MM-YYYY'  }
       - { label: 'Blog post content', name: 'body', widget: 'markdown' }
+
+
