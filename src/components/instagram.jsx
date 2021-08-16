@@ -5,7 +5,7 @@ import Heart from "./heart"
 import "./style.css"
 
 const Instagram = () => {
-  const nodes = useInstagram()
+  const nodes = {};
 
   return (
     <div className="instagram-grid">
